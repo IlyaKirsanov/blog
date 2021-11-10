@@ -1,11 +1,12 @@
 import React from "react";
+import Home from "./pages/Home/Home";
 
-function App() {
-  return (
-    <div>
-      Blog client app
-    </div>
-  );
+function App(): JSX.Element {
+	return (
+		<>
+			<Home />
+		</>
+	);
 }
 
 export default App;
