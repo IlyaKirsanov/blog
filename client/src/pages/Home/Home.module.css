@@ -1,8 +1,11 @@
 .title {
-	color: #5AB963;
 	display: flex;
+
 	width: 100vw;
+
 	text-align: center;
+
+	color: #5AB963;
 }
 
 .red {
