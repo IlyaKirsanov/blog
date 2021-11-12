@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from './Home.module.css';
+import styles from './Home.module.scss';
 import cn from "classnames";
 
 const Home: React.FC = (): JSX.Element => {
