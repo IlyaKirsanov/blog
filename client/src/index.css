@@ -2,7 +2,7 @@
 :root {
 	--black: #3B434E;
 	--white: white;
-	--font-family: "Roboto", sans-serif;
+	--font-family: "Inter", sans-serif;
 }
 
 * {
@@ -54,7 +54,7 @@ body {
 }
 
 body {
-	font-family: "Roboto", sans-serif;
+	font-family: var(--font-family);
 	line-height: 1;
 	text-rendering: optimizeLegibility;
 	-ms-text-size-adjust: 100%;
