@@ -1,9 +1,4 @@
-
-:root {
-	--black: #3B434E;
-	--white: white;
-	--font-family: "Inter", sans-serif;
-}
+@import "./style/variables";
 
 * {
 	margin: 0;
@@ -54,7 +49,7 @@ body {
 }
 
 body {
-	font-family: var(--font-family);
+	font-family: $inter-font;
 	line-height: 1;
 	text-rendering: optimizeLegibility;
 	-ms-text-size-adjust: 100%;

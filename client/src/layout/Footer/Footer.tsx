@@ -1,10 +1,12 @@
-import React from "react";
+import React, { FC } from "react";
 import Socials from "../Socials/Socials";
 import styles from "./Footer.module.scss";
+import { FooterProps } from "./Footer.props";
+import cn from "classnames";
 
-const Footer = (): JSX.Element => {
+const Footer: FC<FooterProps> = ({ className }): JSX.Element => {
 	return (
-		<footer className={styles.footerWrapper}>
+		<footer className={cn(className, styles.footerWrapper)}>
 			<div className={styles.footerContent}>
 				<p className={styles.text}>
 					<span className={styles.textBold}>Blogium </span>
