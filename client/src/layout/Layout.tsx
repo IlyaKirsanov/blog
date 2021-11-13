@@ -17,4 +17,13 @@ const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
 	);
 };
 
-export default Layout;
+export const withLayout = <T extends Record<string, unknown>>(Component: React.FunctionComponent<T>) => {
+	// This method return updated Component with Layout
+	return (props: T): JSX.Element => {
+		return (
+			<Layout>
+				<Component {...props} />
+			</Layout>
+		);
+	};
+};

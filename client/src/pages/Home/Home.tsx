@@ -1,15 +1,13 @@
 import React from "react";
-import Layout from "../../layout/Layout";
+import { withLayout } from "../../layout/Layout";
 
 const Home: React.FC = (): JSX.Element => {
 
 	return (
 		<div>
-			<Layout>
-				Some Content
-			</Layout>
+			Some Content
 		</div>
 	);
 };
 
-export default Home;
+export default withLayout(Home);
