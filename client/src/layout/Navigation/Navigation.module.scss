@@ -1,0 +1,15 @@
+.navigation {
+	display: flex;
+	gap: 30px;
+	margin-right: 30px;
+
+	.navItem {
+		font-size: 16px;
+		line-height: 19px;
+		cursor: pointer;
+
+		&:hover{
+			opacity: 0.8;
+		}
+	}
+}
