@@ -27,7 +27,8 @@ export const mockData: MockData = {
 			"createdDate": 1636921501000,
 			"likes": ["1"],
 			"author": "1",
-			"tags":["react", "node"]
+			"tags":["react", "node"],
+			"mainImage":"https://images.unsplash.com/photo-1584907797015-7554cd315667?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=876&q=80"
 		},
 		{
 			"id": "2",
@@ -35,8 +36,9 @@ export const mockData: MockData = {
 			"content": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla",
 			"createdDate": 1636921501000,
 			"likes": ["2"],
-			"author": "1",
-			"tags":["vue", "php"]
+			"author": "2",
+			"tags":["vue", "php"],
+			"mainImage":"https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80",
 		},
 		{
 			"id": "3",
@@ -45,7 +47,8 @@ export const mockData: MockData = {
 			"createdDate": 1636921501000,
 			"likes": ["1", "2"],
 			"author": "2",
-			"tags":["docker", "kubernetes"]
+			"tags":["docker", "kubernetes"],
+			"mainImage":"https://images.unsplash.com/photo-1580894908361-967195033215?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
 		},
 		{
 			"id": "4",
@@ -54,7 +57,8 @@ export const mockData: MockData = {
 			"createdDate": 1636921501000,
 			"likes": [],
 			"author": "2",
-			"tags": ["react", "vue"]
+			"tags": ["react", "vue"],
+			"mainImage":"https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80"
 		},
 	]
 };

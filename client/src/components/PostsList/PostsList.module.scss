@@ -1,0 +1,31 @@
+@import "./src/style/variables";
+
+.postsWrapper{
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 50px 0px;
+}
+
+.postsTitle{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+
+	.recent{
+		font-size: 22px;
+		line-height: 60px;
+	}
+
+	.morePosts{
+		font-size: 16px;
+		line-height: 23px;
+		color: $primary;
+		cursor: pointer;
+
+		&:hover{
+			opacity: .8;
+		}
+
+	}
+}

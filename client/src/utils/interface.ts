@@ -14,7 +14,8 @@ export interface Post {
 	createdDate: number,
 	likes: User["id"][],
 	author: User['id'],
-	tags: string[]
+	tags: string[],
+	mainImage: string,
 }
 
 export interface MockData {

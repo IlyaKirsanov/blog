@@ -6,9 +6,9 @@ import { PostsList } from "../../components/";
 const Home: React.FC = (): JSX.Element => {
 
 	return (
-		<div>
+		<>
 			<PostsList className={styles.postsList}/>
-		</div>
+		</>
 	);
 };
 
