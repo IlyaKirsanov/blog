@@ -1,10 +1,10 @@
 import React, { FC } from "react";
 import { HeaderProps } from "./Header.props";
+import styles from "./Header.module.scss";
 import Navigation from "../Navigation/Navigation";
 import Socials from "../Socials/Socials";
 import SearchField from "../SearchField/SearchField";
 import blogiumIcon from "../../static/images/Blogium-logo.png";
-import styles from "./Heade.module.scss";
 
 const Header: FC<HeaderProps> = (): JSX.Element => {
 
