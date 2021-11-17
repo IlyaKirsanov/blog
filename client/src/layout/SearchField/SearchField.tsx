@@ -18,6 +18,7 @@ const SearchField:FC<SearchFieldProps> = ({className}): JSX.Element => {
 		setSearchValue('');
 	};
 
+	//TODO MUI
 	return (
 		<form
 			className={cn(className, styles.searchForm)}

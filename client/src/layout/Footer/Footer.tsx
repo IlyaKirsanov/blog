@@ -5,6 +5,7 @@ import { FooterProps } from "./Footer.props";
 import cn from "classnames";
 
 const Footer: FC<FooterProps> = ({ className }): JSX.Element => {
+	//TODO MUI
 	return (
 		<footer className={cn(className, styles.footerWrapper)}>
 			<div className={styles.footerContent}>

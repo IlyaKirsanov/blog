@@ -19,6 +19,7 @@ export const PostsList: FC<PostsListProps> = ({ className }): JSX.Element => {
 		}
 	}, []);
 
+	//TODO MUI
 	return (
 		<div className={className}>
 			<div className={styles.postsWrapper}>

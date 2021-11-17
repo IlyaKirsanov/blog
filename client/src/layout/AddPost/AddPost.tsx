@@ -7,6 +7,7 @@ const AddPost = (): JSX.Element => {
 
 	const { dispatch } = useAppModal();
 
+	//TODO MUI
 	return (
 		<div title="Create new post" className={styles.addPost}>
 			<button className={styles.addButton} onClick={() => dispatch({ type: 'toggleModal' })}>

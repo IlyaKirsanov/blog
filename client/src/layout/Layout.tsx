@@ -8,6 +8,7 @@ import styles from "./Layout.module.scss";
 
 const Layout: FC<LayoutProps> = ({ children }): JSX.Element => {
 
+	//TODO MUI
 	return (
 		<div className={styles.layout}>
 			<Header className={styles.header} />

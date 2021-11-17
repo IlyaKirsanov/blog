@@ -7,7 +7,7 @@ import blogiumIcon from "../../static/images/Blogium-logo.png";
 import AddPost from "../AddPost/AddPost";
 
 const Header: FC<HeaderProps> = (): JSX.Element => {
-
+	//TODO MUI
 	return (
 		<header className={styles.header}>
 			<img src={blogiumIcon} className={styles.logo}/>

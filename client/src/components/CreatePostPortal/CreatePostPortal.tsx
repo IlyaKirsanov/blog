@@ -17,6 +17,7 @@ const CreatePostComponent = () => {
 
 	useOnClickOutside(ref, handleOutsideClick);
 
+	//TODO MUI
 	return (
 		<div className={styles.portalBackdrop}>
 			<div className={styles.portalContainer} ref={ref}>
