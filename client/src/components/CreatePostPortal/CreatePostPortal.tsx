@@ -20,10 +20,6 @@ const CreatePostComponent = () => {
 	return (
 		<div className={styles.portalBackdrop}>
 			<div className={styles.portalContainer} ref={ref}>
-				<h2>Portal</h2>
-				<button className="close" onClick={() => dispatch({ type: 'toggleModal' })}>
-					Close
-				</button>
 				<AddPostForm />
 			</div>
 		</div>
