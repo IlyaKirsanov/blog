@@ -1,23 +1,15 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import { PostsListProps } from "./PostsList.props";
 import { Post } from "../../utils/interface";
 import { map } from "lodash";
 import { PostItem } from "../../components";
 import styles from "./PostsList.module.scss";
+import { useSelector } from "react-redux";
+import { postsSelector } from "../../store/selectors";
 
 export const PostsList: FC<PostsListProps> = ({ className }): JSX.Element => {
 
-	const [posts, setPosts] = useState<Post[]>([]);
-
-	//TODO Replace with state
-	useEffect(() => {
-		try {
-			const posts = localStorage.getItem('posts');
-			posts && setPosts(JSON.parse(posts));
-		} catch (error) {
-			console.log(error);
-		}
-	}, []);
+	const posts = useSelector(postsSelector);
 
 	//TODO MUI
 	return (

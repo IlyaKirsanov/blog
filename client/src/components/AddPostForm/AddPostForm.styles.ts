@@ -1,8 +1,6 @@
 import { C_BLACK, C_DARK_BLUE, C_SECONDARY, C_TERTIARY, FF_INTER } from "../../constants/style-variables";
 import { getColorWithTransparency } from "../../utils/style-utils";
 
-console.log(getColorWithTransparency(C_SECONDARY, '40%'));
-
 export const styles = {
 	container: {
 		width: '100%',
@@ -40,8 +38,24 @@ export const styles = {
 		flex: 1,
 		gap: '20px'
 	},
-	postTitleInput: {},
-	postContentInput: {},
+	postTitleInput: {
+		'label': {
+			color: `${C_DARK_BLUE} !important`,
+			borderColor: `${C_DARK_BLUE} !important`
+		},
+		'div fieldset': {
+			border: `1px solid ${C_DARK_BLUE} !important`,
+		}
+	},
+	postContentInput: {
+		'label': {
+			color: `${C_DARK_BLUE} !important`,
+			borderColor: `${C_DARK_BLUE} !important`
+		},
+		'div fieldset': {
+			border: `1px solid ${C_DARK_BLUE} !important`,
+		}
+	},
 	submitBtn: {
 		backgroundColor: C_TERTIARY,
 		color: C_DARK_BLUE,

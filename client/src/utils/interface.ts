@@ -7,15 +7,16 @@ export interface User {
 	avatar: string
 }
 
+//TODO implement all fields in create post form (also needed post page)
 export interface Post {
 	id: string,
 	title: string,
 	content: string,
 	createdDate: number,
-	likes: User["id"][],
+	likes?: User["id"][],
 	author: User['id'],
-	tags: string[],
-	mainImage: string,
+	tags?: string[],
+	mainImage?: string,
 }
 
 export interface MockData {

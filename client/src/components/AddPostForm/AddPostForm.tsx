@@ -1,14 +1,55 @@
-import React from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import { useAppModal } from "../../utils/app-context";
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import { styles as s } from "./AddPostForm.styles";
+import { Post } from "../../utils/interface";
+import { uid } from "uid";
+import { useDispatch, useSelector } from "react-redux";
+import { postsSelector } from "../../store/selectors";
+import { setPosts } from "../../store/actions";
 
 export const AddPostForm = (): JSX.Element => {
 
-	const { dispatch } = useAppModal();
+	const { dispatch: dispatchContext } = useAppModal();
+	const dispatch = useDispatch();
+	const posts = useSelector(postsSelector);
+	const [newPost, setNewPost] = useState<Post | null>(null);
+	const [postTitle, setPostTitle] = useState<string>('');
+	const [postContent, setPostContent] = useState<string>('');
 
-	const handleCloseForm = () => dispatch({ type: 'toggleModal' });
+	const handleCloseForm = () => dispatchContext({ type: 'toggleModal' });
+
+	const handleFormSubmit = () => {
+
+		const post: Post = {
+			id: uid(),
+			createdDate: new Date().getTime(),
+			title: postTitle,
+			content: postContent,
+			author: '1'
+		};
+		setNewPost(post);
+		setPostTitle('');
+		setPostContent('');
+		console.log(post);
+	};
+
+	const handleTitleInput = (e: ChangeEvent<HTMLInputElement>) => {
+		e.preventDefault();
+		setPostTitle(e.target.value);
+	};
+
+	const handleContentInput = (e: ChangeEvent<HTMLInputElement>) => {
+		e.preventDefault();
+		setPostContent(e.target.value);
+	};
+
+	useEffect(() => {
+		const updatedPosts = [...posts, newPost];
+		newPost && dispatch(setPosts(updatedPosts));
+
+	}, [newPost]);
 
 	return (
 		<Container
@@ -29,15 +70,24 @@ export const AddPostForm = (): JSX.Element => {
 
 			<form style={s.form}>
 				<TextField
-					label="Post title"
+					sx={s.postTitleInput}
+					label="Create title"
+					id="postTitle"
+					value={postTitle}
+					onChange={handleTitleInput}
 				/>
 				<TextField
-					label="Post content"
+					sx={s.postContentInput}
+					label="Add content"
 					multiline
-					rows={10} />
+					rows={10}
+					id="postContent"
+					value={postContent}
+					onChange={handleContentInput}
+				/>
 			</form>
 			<Button
-				onClick={handleCloseForm}
+				onClick={handleFormSubmit}
 				sx={s.submitBtn}
 			>
 				Submit
