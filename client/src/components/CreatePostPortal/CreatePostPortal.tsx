@@ -20,7 +20,7 @@ const CreatePostComponent = () => {
 	//TODO MUI
 	return (
 		<div className={styles.portalBackdrop}>
-			<div className={styles.portalContainer} ref={ref}>
+			<div className={styles.portalContainer} ref={null}>
 				<AddPostForm />
 			</div>
 		</div>
