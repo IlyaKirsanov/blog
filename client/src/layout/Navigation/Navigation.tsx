@@ -4,6 +4,8 @@ import { NavigationProps } from "./Navigation.props";
 import cn from "classnames";
 
 const Navigation:FC<NavigationProps> = ({className}):JSX.Element => {
+
+	//TODO MUI
 	return (
 		<nav className={cn(className, styles.navigation)}>
 			<span className={styles.navItem}>Blog</span>

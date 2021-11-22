@@ -7,6 +7,7 @@ export const SocialItem: FC<SocialItemProps> = ({ icon, link, title, className, 
 
 	const IconComponent = icon;
 
+	//TODO MUI
 	return (
 		<div className={cn(className, styles.socialItem)}>
 			<a href={link} rel="noopener" target="_blank"  className={styles.url} title={title}>

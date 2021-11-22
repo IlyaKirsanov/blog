@@ -2,14 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-import { initLocalStorage } from "./utils/storage";
-import { mockData } from "./utils/mock-data";
+import { CssBaseline, StyledEngineProvider } from "@mui/material";
+import {Provider} from "react-redux";
+import { store } from "./store/store";
 
-initLocalStorage(mockData);
+// initLocalStorage(mockData);
 
 ReactDOM.render(
 	<React.StrictMode>
-		<App />
+		<Provider store={store}>
+			<StyledEngineProvider injectFirst>
+				<CssBaseline />
+				<App />
+			</StyledEngineProvider>
+		</Provider>
+
 	</React.StrictMode>,
 	document.getElementById('root')
 );

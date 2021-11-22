@@ -17,6 +17,7 @@ export const PostItem: FC<PostItemProps> = ({ post }): JSX.Element => {
 		setPostAuthor(author);
 	}, []);
 
+	//TODO MUI
 	return (
 		<div className={styles.postItem}>
 			<div className={styles.postContainer}>

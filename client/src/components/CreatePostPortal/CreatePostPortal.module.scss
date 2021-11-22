@@ -1,0 +1,22 @@
+.portalBackdrop {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(51, 51, 51, 0.5);
+}
+
+.portalContainer {
+	position: fixed;
+	width: 600px;
+	height: 800px;
+	top: 50%;
+	left: 50%;
+	background-color: #E0E0E0;
+	transform: translate(-50%, -50%);
+}

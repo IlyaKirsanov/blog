@@ -9,6 +9,7 @@ import { SocialsProps } from "./Socials.props";
 
 const Socials:FC<SocialsProps> = ({className}): JSX.Element => {
 
+	//TODO MUI
 	return (
 		<div className={cn(className, styles.socialsContainer)}>
 			{map(socialsData, (item: SocialItemProps) =>

@@ -3,13 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.6.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.1.1",
+    "@mui/material": "^5.1.1",
+    "@types/react-redux": "^7.1.20",
+    "@types/redux-logger": "^3.0.9",
     "classnames": "^2.3.1",
     "date-fns": "^2.25.0",
     "lodash": "^4.17.21",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-redux": "^7.2.6",
     "react-scripts": "4.0.3",
-    "sass": "^1.43.4"
+    "redux": "^4.1.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-logger": "^3.0.6",
+    "sass": "^1.43.4",
+    "uid": "^2.0.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.5.0",

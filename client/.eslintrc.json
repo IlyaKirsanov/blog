@@ -6,6 +6,9 @@
   ],
   "rules": {
     "semi": "error",
+    "no-console": 1,
+    "no-unused-vars": ["error", { "args": "none" }],
+    "no-trailing-spaces": 2,
     "@typescript-eslint/semi": ["warn"],
     "@typescript-eslint/no-empty-interface": [
       "error",
