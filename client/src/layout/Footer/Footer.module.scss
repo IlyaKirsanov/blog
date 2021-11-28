@@ -1,0 +1,28 @@
+.footerWrapper {
+	border-top: 1px solid #E8E8E8;
+
+}
+
+.footerContent {
+	display: flex;
+	justify-content: space-between;
+
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
+
+	padding: 30px 10px;
+
+	.text {
+		font-size: 16px;
+		line-height: 19px;
+
+		.textBold {
+			font-weight: 600;
+		}
+	}
+
+	.socialsFooter {
+
+	}
+}
