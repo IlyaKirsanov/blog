@@ -1,0 +1,22 @@
+version: "3"
+services:
+  frontend:
+    container_name: blog-client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    image: ilya_kirsanov/blog_client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./client:/usr/src/blog
+  backend:
+    container_name: blog-server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    image: ilya_kirsanov/blog_server
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./server:/usr/src/blog
