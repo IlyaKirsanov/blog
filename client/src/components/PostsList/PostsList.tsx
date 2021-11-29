@@ -1,15 +1,16 @@
 import React, { FC } from "react";
 import { PostsListProps } from "./PostsList.props";
 import { Post } from "../../utils/interface";
-import { map } from "lodash";
+import { isEmpty, map } from "lodash";
 import { PostItem } from "../../components";
 import styles from "./PostsList.module.scss";
 import { useSelector } from "react-redux";
-import { postsSelector } from "../../store/selectors";
+import { isPostsInProgress, postsSelector } from "../../store/selectors";
 
 export const PostsList: FC<PostsListProps> = ({ className }): JSX.Element => {
 
 	const posts = useSelector(postsSelector);
+	const isFetchPostsInProgress = useSelector(isPostsInProgress);
 
 	//TODO MUI
 	return (
@@ -19,7 +20,9 @@ export const PostsList: FC<PostsListProps> = ({ className }): JSX.Element => {
 					<span className={styles.recent}>Recent Posts</span>
 					<span className={styles.morePosts}>View all</span>
 				</div>
-				{map(posts, (postItem: Post) => <PostItem post={postItem} key={postItem.id} />)}
+				{isEmpty(posts) && isFetchPostsInProgress && <div>Loading Posts...</div>}
+				{!isEmpty(posts) && !isFetchPostsInProgress
+					&& map(posts, (postItem: Post) => <PostItem post={postItem} key={postItem.id} />)}
 			</div>
 
 		</div>

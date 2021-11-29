@@ -1,19 +1,28 @@
 import { Post, User } from "../utils/interface";
-import { Action, SET_POSTS, TOGGLE_POST_PORTAL } from "./actions";
-
-const persistedUsers = JSON.parse(window && localStorage.getItem("users")!);
-const persistedPosts = JSON.parse(window &&  localStorage.getItem("posts")!);
+import {
+	Action,
+	GET_POSTS,
+	GET_USERS,
+	IS_FETCHING_POSTS,
+	IS_FETCHING_USERS,
+	SET_POSTS,
+	TOGGLE_POST_PORTAL
+} from "./actions";
 
 export type RootState = {
-	posts: (Post | null)[],
-	users: (User | null)[],
-	isPostPortalOpen: boolean
+	posts: Post[],
+	users: User[],
+	isPostPortalOpen: boolean,
+	isFetchingPosts: boolean
+	isFetchingUsers: boolean
 };
 
 const initialState: RootState = {
-	posts: persistedPosts,
-	users: persistedUsers,
-	isPostPortalOpen: false
+	posts: [],
+	users: [],
+	isPostPortalOpen: false,
+	isFetchingPosts: false,
+	isFetchingUsers: false
 };
 
 export const rootReducer = (state: RootState = initialState, action: Action): RootState => {
@@ -24,8 +33,34 @@ export const rootReducer = (state: RootState = initialState, action: Action): Ro
 				isPostPortalOpen: !state.isPostPortalOpen
 			};
 		}
+		case IS_FETCHING_POSTS: {
+			return {
+				...state,
+				isFetchingPosts: action.isFetchingPosts
+			};
+		}
+
+		case IS_FETCHING_USERS: {
+			return {
+				...state,
+				isFetchingUsers: action.isFetchingUsers
+			};
+		}
+
+		case GET_USERS: {
+			return {
+				...state,
+				users: action.users
+			};
+		}
+		case GET_POSTS: {
+			return {
+				...state,
+				posts: action.posts
+			};
+		}
 		case SET_POSTS: {
-			localStorage.setItem("posts",JSON.stringify(action.posts));
+			localStorage.setItem("posts", JSON.stringify(action.posts));
 
 			return {
 				...state,

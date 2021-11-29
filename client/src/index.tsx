@@ -6,8 +6,6 @@ import { CssBaseline, StyledEngineProvider } from "@mui/material";
 import {Provider} from "react-redux";
 import { store } from "./store/store";
 
-// initLocalStorage(mockData);
-
 ReactDOM.render(
 	<React.StrictMode>
 		<Provider store={store}>

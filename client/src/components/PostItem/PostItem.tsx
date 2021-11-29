@@ -5,16 +5,18 @@ import { find, map, size } from "lodash";
 import { format } from "date-fns";
 import styles from './PostItem.module.scss';
 import { ReactComponent as HeartIcon } from './heart.svg';
+import { useSelector } from "react-redux";
+import { usersSelector } from "../../store/selectors";
 
 export const PostItem: FC<PostItemProps> = ({ post }): JSX.Element => {
 
 	const [postAuthor, setPostAuthor] = useState<User | null>(null);
 
-	//TODO Replace with state
+	const users = useSelector(usersSelector);
+
 	useEffect(() => {
-		const users = JSON.parse(localStorage.getItem('users') as string);
 		const author = find(users, (user: User) => user.id === post.author);
-		setPostAuthor(author);
+		author && setPostAuthor(author);
 	}, []);
 
 	//TODO MUI
