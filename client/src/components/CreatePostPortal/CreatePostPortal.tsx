@@ -1,18 +1,19 @@
 import React, { useRef } from "react";
 import ReactDOM from "react-dom";
-import { useAppModal } from "../../utils/app-context";
 import { AddPostForm } from "../AddPostForm/AddPostForm";
 import styles from './CreatePostPortal.module.scss';
 import { useOnClickOutside } from "../../hooks/useOutsideClick";
+import { useDispatch, useSelector } from "react-redux";
+import { togglePostPortal } from "../../store/actions";
+import { isPortalOpenSelector } from "../../store/selectors";
 
 const CreatePostComponent = () => {
 
-	const { dispatch } = useAppModal();
-
 	const ref = useRef(null);
+	const dispatch = useDispatch();
 
 	const handleOutsideClick = () => {
-		dispatch({ type: 'toggleModal' });
+		dispatch(togglePostPortal());
 	};
 
 	useOnClickOutside(ref, handleOutsideClick);
@@ -31,9 +32,9 @@ const CreatePostComponent = () => {
 
 export const CreatePostPortal = (): JSX.Element | null => {
 
-	const { state } = useAppModal();
+	const isPortalOpen = useSelector(isPortalOpenSelector);
 
-	if (!state.isModalOpen) return null;
+	if (!isPortalOpen) return null;
 
 	// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 	return ReactDOM.createPortal(<CreatePostComponent />, document.getElementById('add-post-modal')!);

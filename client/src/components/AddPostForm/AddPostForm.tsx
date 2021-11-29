@@ -1,5 +1,4 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
-import { useAppModal } from "../../utils/app-context";
 import {
 	Box,
 	Button,
@@ -17,12 +16,11 @@ import { Post } from "../../utils/interface";
 import { uid } from "uid";
 import { useDispatch, useSelector } from "react-redux";
 import { postsSelector } from "../../store/selectors";
-import { setPosts } from "../../store/actions";
+import { setPosts, togglePostPortal } from "../../store/actions";
 import { head, isEmpty } from "lodash";
 
 export const AddPostForm = (): JSX.Element => {
 
-	const { dispatch: dispatchContext } = useAppModal();
 	const dispatch = useDispatch();
 	const posts = useSelector(postsSelector);
 	const [newPost, setNewPost] = useState<Post>({} as Post);
@@ -31,7 +29,7 @@ export const AddPostForm = (): JSX.Element => {
 	const [postContent, setPostContent] = useState<string>('');
 	const [tags, setTags] = useState<string[]>([]);
 
-	const handleCloseForm = () => dispatchContext({ type: 'toggleModal' });
+	const handleCloseForm = () => dispatch(togglePostPortal());
 
 	const toBase64 = (file: File) => new Promise((resolve, reject) => {
 		const reader = new FileReader();
