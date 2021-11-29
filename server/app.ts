@@ -1,13 +1,15 @@
 import express, { Application, Request, Response } from 'express';
 import dotenv from 'dotenv';
+const cors = require('cors');
 
 const usersData = require('./users.json')
 const postsData = require('./posts.json')
 
 const app: Application = express();
 
+app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 
 dotenv.config()
 // @ts-ignore
@@ -23,8 +25,7 @@ try {
 }
 
 app.get('/', ((req: Request, res: Response) => {
-	console.log(req.path)
-	console.log(req.method)
+	console.log(`METHOD: ${req.method}, PATH: ${req.path}`)
 	try {
 		res.send('Hello NodeJs server')
 	} catch (e: any) {
@@ -34,9 +35,7 @@ app.get('/', ((req: Request, res: Response) => {
 
 
 app.get('/posts', ((req: Request, res: Response) => {
-	console.log(req.path)
-	console.log(req.method)
-
+	console.log(`METHOD: ${req.method}, PATH: ${req.path}`)
 	try {
 		res.send(postsData)
 	} catch (e: any) {
@@ -46,9 +45,7 @@ app.get('/posts', ((req: Request, res: Response) => {
 
 
 app.get('/users', ((req: Request, res: Response) => {
-	console.log(req.path)
-	console.log(req.method)
-
+	console.log(`METHOD: ${req.method}, PATH: ${req.path}`)
 	try {
 		res.send(usersData)
 	} catch (e: any) {
