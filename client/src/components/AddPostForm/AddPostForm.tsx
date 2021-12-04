@@ -31,6 +31,12 @@ export const AddPostForm = (): JSX.Element => {
 
 	const handleCloseForm = () => dispatch(togglePostPortal());
 
+	//! TODO https://github.com/IlyaKirsanov/blog/commit/f74955656d99a0c085ee131bc55a16f706bdcc63#r61114210
+	/*
+	you can declare this function outside of the component, it doesn't depend on any component prop. So it's not necessary to recreate this function on each render.
+	Although this only function is not a problem for performance, still you can reduce the size of the component just by pulling this out
+	*/
+
 	const toBase64 = (file: File) => new Promise((resolve, reject) => {
 		const reader = new FileReader();
 		reader.readAsDataURL(file);
@@ -79,7 +85,7 @@ export const AddPostForm = (): JSX.Element => {
 	};
 
 	const handleSelectTags = (event: SelectChangeEvent<typeof tags>) => {
-		const {	target: { value }} = event;
+		const { target: { value } } = event;
 		setTags(typeof value === 'string' ? value.split(',') : value);
 	};
 
@@ -138,6 +144,11 @@ export const AddPostForm = (): JSX.Element => {
 			</form>
 			<Button
 				onClick={handleFormSubmit}
+				//! TODO https://github.com/IlyaKirsanov/blog/commit/ad7eb697f1d83d57328b82f4f864c971a15085c0#r61114542
+				/*
+					Usually form submission is done by using button with type="submit" inside the form and onSubmit event
+					In such implementation, you can just press enter in one of the fields and submit the form
+				*/
 				sx={s.submitBtn}
 			>
 				Submit

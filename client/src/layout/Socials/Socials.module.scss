@@ -6,6 +6,19 @@
 }
 
 .socialItem {
+	//! TODO https://github.com/IlyaKirsanov/blog/commit/49b71873cbb6b90b6b7dc29a76026262559a047d#r61109939
+
+	/*
+	@racc-oo-n
+	racc-oo-n 4 days ago Collaborator
+	btw, you have 2 .socialItem classes in the project, and both of those are on the same element in the end.
+	It's not a problem programmatically, since it's handled by the css-modules, but it's a small drawback for readability. Seeing something like class="socialItem_asdf socialItem_khnm" and trying to find those styles in different files could be hard.
+
+	 @IlyaKirsanov
+		IlyaKirsanov 4 days ago Author Owner
+	@racc-oo-n I plan to change all styling to Material UI components as one of the project conditions, and all scss modules will be removed
+	
+	*/
 	transition: opacity .2s ease;
 
 	&:hover {

@@ -23,6 +23,13 @@
 		color: $primary;
 		cursor: pointer;
 
+		//! TODO https://github.com/IlyaKirsanov/blog/commit/f3a6107fa8132027e82daa6374c4e1cf8b12c628#r61112033
+
+		/*
+		I've already seen that element, and the rule of cursor: pointer; is working again 😆
+			it's better to use a button here, or a link, but for this element, the button is better, since it doesn't redirect
+		*/
+
 		&:hover{
 			opacity: .8;
 		}

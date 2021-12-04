@@ -22,6 +22,20 @@ export const PostsList: FC<PostsListProps> = ({ className }): JSX.Element => {
 				</div>
 				{isEmpty(posts) && isFetchPostsInProgress && <div>Loading Posts...</div>}
 				{!isEmpty(posts) && !isFetchPostsInProgress
+
+					//! TODO https://github.com/IlyaKirsanov/blog/commit/f3a6107fa8132027e82daa6374c4e1cf8b12c628#r61111831
+					/**
+					 * A lot of div's 😄
+						you can use different semantic elements here
+
+						<sectionclassName={styles.postsWrapper}>
+							<h1 className={styles.postsWrapper}>
+								<span className={styles.recent}>Recent Posts</span>
+								<button className={styles.morePosts}>View all</button>
+							</h1>
+						...
+						</section>
+					 */
 					&& map(posts, (postItem: Post) => <PostItem post={postItem} key={postItem.id} />)}
 			</div>
 

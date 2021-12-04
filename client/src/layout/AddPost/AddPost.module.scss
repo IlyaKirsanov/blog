@@ -1,6 +1,13 @@
 .addPost {
 	width: 50px;
-	height: 5cm;
+	height: 50px;
+
+	//! TODO https://github.com/IlyaKirsanov/blog/commit/6fe5d90091b6d4d658a1c484d0ccef67b1ee2f29#r61111417
+
+	/*
+	and also what I've noticed, you use a lot of wrappers. For example, here .addPost and .addButton why those are different elements? Why don't you use those styles together in 1 class? Do you have any reasons for that?
+	It's not good or bad, I'm just wondering
+	*/
 
 	.addButton {
 		width: 100%;

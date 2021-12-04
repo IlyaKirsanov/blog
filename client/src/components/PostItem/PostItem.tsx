@@ -28,6 +28,14 @@ export const PostItem: FC<PostItemProps> = ({ post }): JSX.Element => {
 				</div>
 				<div className={styles.postContent}>
 					<div className={styles.postHeader}>
+					//! TODO https://github.com/IlyaKirsanov/blog/commit/f3a6107fa8132027e82daa6374c4e1cf8b12c628#r61113221
+					/**
+						again a lot of div's 😃
+						I saw you want to use this project as a personal blog, it's a good idea to do it not just as homework, but use for more (still I will recommend looking into Gatsby or any other static generator for such task)
+						But still, if you do something that will depend on searching it's better to consider SEO principles, semantic HTML is one of those, especially correct buttons, links, and headers, it's very important if you want google bots to love you 😄
+						you can read any article about semantics, I remember I opened every one even if I knew I already read something similar, it helps remember all those rules and tags.
+						But as an example	
+					 */
 						<div className={styles.authorAvatar}>
 							<img src={postAuthor?.avatar} className={styles.avatar} alt="avatar" />
 						</div>

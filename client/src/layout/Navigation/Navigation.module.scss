@@ -8,6 +8,11 @@
 		line-height: 19px;
 		cursor: pointer;
 
+		//! TODO https://github.com/IlyaKirsanov/blog/commit/45a9dfd3e11f707a89a36145383d1e7db42e1a3c#r61110116
+		/*
+			I didn't see this html yet, but cursor: pointer is already a sign that something is wrong there 😊
+		*/
+
 		&:hover{
 			opacity: 0.8;
 		}
