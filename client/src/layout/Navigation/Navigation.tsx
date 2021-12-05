@@ -5,7 +5,7 @@ import cn from "classnames";
 import { NavLink } from "react-router-dom";
 import { map } from "lodash";
 import { C_DARK_BLUE, C_SECONDARY } from "constants/style-variables";
-import { Link, Box } from "@mui/material";
+import { Box, Button } from "@mui/material";
 
 const navigationItems = [
 	{ url: '/blog', title: 'Blog' },
@@ -23,11 +23,10 @@ const Navigation: FC<NavigationProps> = ({ className }): JSX.Element => {
 					key={url}
 					style={({ isActive }) => {
 						return {
-							fontWeight: 'bold',
 							color: isActive ? C_SECONDARY : C_DARK_BLUE
 						};
 					}}>
-					<Link color="inherit" underline="hover">{title}</Link>
+					<Button color="inherit">{title}</Button>
 				</NavLink>
 			)}
 		</Box>

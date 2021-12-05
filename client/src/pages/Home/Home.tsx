@@ -1,8 +1,7 @@
 import { Container, Typography } from "@mui/material";
 import React from "react";
-import { withLayout } from "../../layout/Layout";
 
-const Home: React.FC = (): JSX.Element => {
+export const Home: React.FC = (): JSX.Element => {
 
 	return (
 		<Container>
@@ -10,5 +9,3 @@ const Home: React.FC = (): JSX.Element => {
 		</Container>
 	);
 };
-
-export default withLayout(Home);

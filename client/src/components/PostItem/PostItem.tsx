@@ -7,6 +7,7 @@ import styles from './PostItem.module.scss';
 import { ReactComponent as HeartIcon } from './heart.svg';
 import { useSelector } from "react-redux";
 import { usersSelector } from "../../store/selectors";
+import { Link } from "react-router-dom";
 
 export const PostItem: FC<PostItemProps> = ({ post }): JSX.Element => {
 
@@ -59,7 +60,13 @@ export const PostItem: FC<PostItemProps> = ({ post }): JSX.Element => {
 						<div className={styles.postTags}>
 							{map(post.tags, (tag: string) => <span key={tag} className={styles.tag}>{tag}</span>)}
 						</div>
-						<span className={styles.readMore}>Read More ...</span>
+						<Link
+							className={styles.readMore}
+							to={`/blog/${post.id}`}
+							key={post.id}
+						>
+							Read More ...
+						</Link>
 					</div>
 				</div>
 			</div>

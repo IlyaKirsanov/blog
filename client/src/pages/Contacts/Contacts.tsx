@@ -1,8 +1,7 @@
 import { Container, Typography } from "@mui/material";
-import { withLayout } from "layout/Layout";
 import React from "react";
 
-const Contacts: React.FC = (): JSX.Element => {
+export const Contacts: React.FC = (): JSX.Element => {
 
 	return (
 		<Container>
@@ -10,5 +9,3 @@ const Contacts: React.FC = (): JSX.Element => {
 		</Container>
 	);
 };
-
-export default withLayout(Contacts);

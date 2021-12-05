@@ -1,9 +1,8 @@
+import React from "react";
 import { Typography, Container } from "@mui/material";
 import { PostsList } from "components";
-import { withLayout } from "layout/Layout";
-import React from "react";
 
-const Blog: React.FC = (): JSX.Element => {
+export const Blog: React.FC = (): JSX.Element => {
 
 	return (
 		<Container>
@@ -12,5 +11,3 @@ const Blog: React.FC = (): JSX.Element => {
 		</Container>
 	);
 };
-
-export default withLayout(Blog);
