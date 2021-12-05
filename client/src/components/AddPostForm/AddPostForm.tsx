@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import {
 	Box,
 	Button,
@@ -14,15 +14,15 @@ import CloseIcon from '@mui/icons-material/Close';
 import { styles as s } from "./AddPostForm.styles";
 import { Post } from "../../utils/interface";
 import { uid } from "uid";
-import { useDispatch, useSelector } from "react-redux";
-import { postsSelector } from "../../store/selectors";
-import { setPosts, togglePostPortal } from "../../store/actions";
+import { useDispatch } from "react-redux";
+import { togglePostPortal } from "../../store/actions";
 import { head, isEmpty } from "lodash";
+import { sendPost } from "../../store/asyncAction";
+import { toBase64 } from "utils";
 
 export const AddPostForm = (): JSX.Element => {
 
 	const dispatch = useDispatch();
-	const posts = useSelector(postsSelector);
 	const [newPost, setNewPost] = useState<Post>({} as Post);
 	const [postTitle, setPostTitle] = useState<string>('');
 	const [imageFile, setImageFile] = useState<string>('');
@@ -31,21 +31,8 @@ export const AddPostForm = (): JSX.Element => {
 
 	const handleCloseForm = () => dispatch(togglePostPortal());
 
-	//! TODO https://github.com/IlyaKirsanov/blog/commit/f74955656d99a0c085ee131bc55a16f706bdcc63#r61114210
-	/*
-	you can declare this function outside of the component, it doesn't depend on any component prop. So it's not necessary to recreate this function on each render.
-	Although this only function is not a problem for performance, still you can reduce the size of the component just by pulling this out
-	*/
-
-	const toBase64 = (file: File) => new Promise((resolve, reject) => {
-		const reader = new FileReader();
-		reader.readAsDataURL(file);
-		reader.onload = () => resolve(reader.result);
-		reader.onerror = error => reject(error);
-	});
-
-	const handleFormSubmit = async () => {
-
+	const handleFormSubmit = async (e: FormEvent) => {
+		e.preventDefault();
 		const post: Post = {
 			id: uid(),
 			createdDate: new Date().getTime(),
@@ -71,11 +58,7 @@ export const AddPostForm = (): JSX.Element => {
 	};
 
 	useEffect(() => {
-		//TODO Create handle for posts in state and send to server new posts
-
-		const updatedPosts = [...posts, newPost];
-		!isEmpty(newPost) && dispatch(setPosts(updatedPosts));
-
+		!isEmpty(newPost) && dispatch(sendPost(newPost));
 	}, [newPost]);
 
 	const handleFileInput = async (event: ChangeEvent<HTMLInputElement>) => {
@@ -106,7 +89,10 @@ export const AddPostForm = (): JSX.Element => {
 				</Button>
 			</Box>
 
-			<form style={s.form}>
+			<form
+				style={s.form}
+				onSubmit={handleFormSubmit}
+			>
 				<TextField
 					sx={s.postTitleInput}
 					label="Create title"
@@ -141,18 +127,14 @@ export const AddPostForm = (): JSX.Element => {
 					<MenuItem value="Vue">Vue</MenuItem>
 					<MenuItem value="Angular">Angular</MenuItem>
 				</Select>
+				<Button
+					type="submit"
+					sx={s.submitBtn}
+				>
+					Submit
+				</Button>
 			</form>
-			<Button
-				onClick={handleFormSubmit}
-				//! TODO https://github.com/IlyaKirsanov/blog/commit/ad7eb697f1d83d57328b82f4f864c971a15085c0#r61114542
-				/*
-					Usually form submission is done by using button with type="submit" inside the form and onSubmit event
-					In such implementation, you can just press enter in one of the fields and submit the form
-				*/
-				sx={s.submitBtn}
-			>
-				Submit
-			</Button>
+
 		</Container>
 	);
 };
