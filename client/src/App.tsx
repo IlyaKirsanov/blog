@@ -3,6 +3,10 @@ import Home from "./pages/Home/Home";
 import { CreatePostPortal } from "./components";
 import { useDispatch } from "react-redux";
 import { fetchPosts, fetchUsers } from "./store/asyncAction";
+import { Route, Routes } from "react-router-dom";
+import About from "pages/About/About";
+import Blog from "pages/Blog/Blog";
+import Contacts from "pages/Contacts/Contacts";
 
 function App(): JSX.Element {
 
@@ -16,7 +20,12 @@ function App(): JSX.Element {
 	return (
 		<>
 			<CreatePostPortal />
-			<Home />
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="about" element={<About />} />
+				<Route path="blog" element={<Blog />} />
+				<Route path="contacts" element={<Contacts />} />
+			</Routes>
 		</>
 	);
 }

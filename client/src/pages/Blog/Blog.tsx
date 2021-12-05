@@ -1,13 +1,13 @@
 import { withLayout } from "layout/Layout";
 import React from "react";
 
-const About: React.FC = (): JSX.Element => {
+const Blog: React.FC = (): JSX.Element => {
 
 	return (
 		<div>
-			<h1>ABOUT</h1>
+			<h1>BLOG</h1>
 		</div>
 	);
 };
 
-export default withLayout(About);
+export default withLayout(Blog);

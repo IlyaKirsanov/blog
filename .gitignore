@@ -6,3 +6,4 @@
 /server/.env
 /server/.idea
 /.idea
+client/package-lock.json
