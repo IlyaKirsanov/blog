@@ -1,12 +1,13 @@
+import { Container, Typography } from "@mui/material";
 import { withLayout } from "layout/Layout";
 import React from "react";
 
 const Contacts: React.FC = (): JSX.Element => {
 
 	return (
-		<div>
-			<h1>Contacts</h1>
-		</div>
+		<Container>
+			<Typography variant="h5">Contacts page</Typography>
+		</Container>
 	);
 };
 

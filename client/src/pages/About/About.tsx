@@ -1,12 +1,13 @@
+import { Container, Typography } from "@mui/material";
 import { withLayout } from "layout/Layout";
 import React from "react";
 
 const About: React.FC = (): JSX.Element => {
 
 	return (
-		<div>
-			<h1>ABOUT</h1>
-		</div>
+		<Container>
+			<Typography variant="h5">About page</Typography>
+		</Container>
 	);
 };
 

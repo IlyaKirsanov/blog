@@ -1,14 +1,13 @@
+import { Container, Typography } from "@mui/material";
 import React from "react";
 import { withLayout } from "../../layout/Layout";
-import styles from './Home.module.scss';
-import { PostsList } from "../../components/";
 
 const Home: React.FC = (): JSX.Element => {
 
 	return (
-		<>
-			<PostsList className={styles.postsList}/>
-		</>
+		<Container>
+			<Typography variant="h3">Home page</Typography>
+		</Container>
 	);
 };
 
