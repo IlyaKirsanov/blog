@@ -10,6 +10,7 @@ services:
       - "3000:3000"
     volumes:
       - ./client:/usr/src/blog
+    command: sh -c "npm install && npm run start"
   backend:
     container_name: blog-server
     build:
@@ -20,3 +21,4 @@ services:
       - "4000:4000"
     volumes:
       - ./server:/usr/src/blog
+    command: sh -c "npm install && npm run serve"

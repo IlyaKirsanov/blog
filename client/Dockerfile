@@ -5,5 +5,3 @@ RUN mkdir -p /usr/src/blog
 WORKDIR /usr/src/blog
 
 EXPOSE 3000
-
-CMD [ "npm", "start" ]
