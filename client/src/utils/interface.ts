@@ -1,3 +1,9 @@
+/* eslint-disable no-unused-vars */
+
+export enum Statuses {
+	Succes = 'Succes',
+	Fail = 'Fail'
+}
 export interface User {
 	id: string,
 	name: string,
@@ -22,4 +28,10 @@ export interface Post {
 export interface MockData {
 	users: User[],
 	posts: Post[]
+}
+
+export interface ActionData {
+	id: number,
+	action: string,
+	status: Statuses
 }
