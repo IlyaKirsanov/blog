@@ -38,7 +38,6 @@ export const PostsList: FC<PostsListProps> = ({ className }): JSX.Element => {
 					 */
 					&& map(posts, (postItem: Post) => <PostItem post={postItem} key={postItem.id} />)}
 			</div>
-
 		</div>
 	);
 };
